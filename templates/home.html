@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fish Weight Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <body style="background-color: #4cc9f0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form action="/predict" method="post" class="form-wrapper">
+            <h2 class="text-center mb-4">Fish Weight Prediction</h2>
+            <div class="form-group">
+              <label for="vertical-length">Vertical Length of the fish:</label>
+              <input type="float" name="Vertical_Length_in_cm" id="vertical-length" class="form-control" placeholder="Enter here">
+            </div>
+            <div class="form-group">
+              <label for="diagonal-length">Diagonal Length of the fish:</label>
+              <input type="float" name="Diagonal_Length_in_cm" id="diagonal-length" class="form-control" placeholder="Enter here">
+            </div>
+            <div class="form-group">
+              <label for="cross-length">Cross Length of the fish:</label>
+              <input type="float" name="Cross_Length_in_cm" id="cross-length" class="form-control" placeholder="Enter here">
+            </div>
+            <div class="form-group">
+              <label for="height">Height of the fish:</label>
+              <input type="float" name="Height_in_cm" id="height" class="form-control" placeholder="Enter here">
+            </div>
+            <div class="form-group">
+              <label for="diagonal-width">Diagonal Width of the fish:</label>
+              <input type="float" name="Diagonal_Width_in_cm" id="diagonal-width" class="form-control" placeholder="Enter here">
+            </div>
+            <div class="form-group">
+              <label for="species">Species:</label>
+              <select name="Species" id="species" class="form-control">
+                <option value="Bream">Bream</option>
+                <option value="Parkki">Parkki</option>
+                <option value="Perch">Perch</option>
+                <option value="Pike">Pike</option>
+                <option value="Roach">Roach</option>
+                <option value="Smelt">Smelt</option>
+                <option value="Whitefish">Whitefish</option>
+              </select>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" id="pr"class="btn btn-primary btn-lg">Predict the Weight</button>
+            </div>
+          </form>
+          <div class="prediction-text-wrapper text-center">
+            <h3>{{prediction_text}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
